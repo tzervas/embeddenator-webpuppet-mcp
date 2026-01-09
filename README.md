@@ -1,4 +1,4 @@
-# embeddenator-webpuppet-mcp
+# webpuppet-rs-mcp
 
 MCP (Model Context Protocol) server for webpuppet browser automation.
 
