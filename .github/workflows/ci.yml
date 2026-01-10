@@ -22,6 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       
+      - name: Checkout webpuppet-rs dependency
+        uses: actions/checkout@v6
+        with:
+          repository: tzervas/webpuppet-rs
+          path: webpuppet-rs
+      
+      - name: Install OpenSSL
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev pkg-config
+      
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
         with:
