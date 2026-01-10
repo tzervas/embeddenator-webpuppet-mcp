@@ -12,13 +12,21 @@
 //! - **Tool exposure**: Exposes AI prompting, screenshot, and research capabilities
 //! - **Security guardrails**: Inherits webpuppet's permission system
 //! - **Response screening**: Filters prompt injections and malicious content
+//! - **Browser detection**: Automatic detection of Chromium-based browsers
+//! - **Human intervention**: Pause/resume workflow for manual steps (captcha, 2FA)
 //!
 //! ## Available Tools
 //!
-//! - `webpuppet_prompt`: Send prompts to AI providers (Claude, Grok, Gemini)
+//! - `webpuppet_prompt`: Send prompts to AI providers (Claude, Grok, Gemini, ChatGPT, Perplexity, NotebookLM, Kaggle)
 //! - `webpuppet_screenshot`: Take screenshots of web pages
 //! - `webpuppet_list_providers`: List available AI providers
-//! - `webpuppet_detect_browsers`: Detect installed browsers
+//! - `webpuppet_provider_capabilities`: Get capabilities for a specific provider
+//! - `webpuppet_detect_browsers`: Detect installed browsers (Brave, Chrome, Chromium, Edge, Opera, Vivaldi, Firefox, Safari)
+//! - `webpuppet_check_permission`: Check if an operation is allowed by permission policy
+//! - `webpuppet_intervention_status`: Check if human intervention is needed
+//! - `webpuppet_intervention_complete`: Signal completion of manual intervention
+//! - `webpuppet_pause`: Pause automation for manual interaction
+//! - `webpuppet_resume`: Resume automation after pause
 //!
 //! ## Usage with VS Code
 //!
