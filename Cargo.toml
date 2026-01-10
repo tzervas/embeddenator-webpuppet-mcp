@@ -1,11 +1,13 @@
 [package]
 name = "embeddenator-webpuppet-mcp"
-version = "0.1.0-alpha.2"
+version = "0.1.0-alpha.3"
 edition = "2021"
 authors = ["Tyler Zervas <tz-dev@vectorweight.com>"]
 description = "MCP (Model Context Protocol) server for webpuppet browser automation"
 license = "MIT"
 repository = "https://github.com/tzervas/embeddenator-webpuppet-mcp"
+documentation = "https://docs.rs/embeddenator-webpuppet-mcp"
+readme = "README.md"
 keywords = ["mcp", "browser-automation", "ai", "copilot", "vscode"]
 categories = ["web-programming", "development-tools"]
 
@@ -16,7 +18,7 @@ http = ["dep:axum", "dep:tower", "dep:tower-http"]
 
 [dependencies]
 # Webpuppet core - enable all providers for full support
-embeddenator-webpuppet = { path = "../embeddenator-webpuppet", features = ["all-providers"] }
+embeddenator-webpuppet = { path = "../webpuppet-rs", features = ["all-providers"] }
 
 # Async runtime
 tokio = { version = "1.35", features = ["full", "sync"] }
