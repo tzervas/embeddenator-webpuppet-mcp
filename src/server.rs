@@ -5,7 +5,7 @@ use std::sync::Arc;
 
 use tokio::sync::RwLock;
 
-use embeddenator_webpuppet::PermissionGuard;
+use webpuppet::PermissionGuard;
 
 use crate::error::{codes, Result};
 use crate::protocol::{

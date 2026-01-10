@@ -41,7 +41,7 @@ jobs:
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
         with:
-          key: embeddenator-webpuppet-mcp
+          key: webpuppet-mcp
           workspaces: webpuppet-rs-mcp
       
       - name: Check formatting

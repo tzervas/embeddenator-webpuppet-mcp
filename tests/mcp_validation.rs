@@ -51,7 +51,7 @@ impl McpTestClient {
     async fn spawn() -> Result<Self, Box<dyn std::error::Error>> {
         // Build the MCP server first
         let build_status = std::process::Command::new("cargo")
-            .args(["build", "-p", "embeddenator-webpuppet-mcp", "--release"])
+            .args(["build", "-p", "webpuppet-mcp", "--release"])
             .current_dir(env!("CARGO_MANIFEST_DIR"))
             .status()?;
 

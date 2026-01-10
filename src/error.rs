@@ -33,7 +33,7 @@ pub enum Error {
 
     /// Webpuppet error.
     #[error("webpuppet error: {0}")]
-    Webpuppet(#[from] embeddenator_webpuppet::Error),
+    Webpuppet(#[from] webpuppet::Error),
 
     /// Serialization error.
     #[error("serialization error: {0}")]

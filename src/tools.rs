@@ -7,7 +7,7 @@ use serde::Deserialize;
 use serde_json::json;
 use tokio::sync::RwLock;
 
-use embeddenator_webpuppet::{
+use webpuppet::{
     BrowserDetector, InterventionHandler, InterventionState, Operation, PermissionGuard,
     PromptRequest, Provider, ScreeningConfig, WebPuppet,
 };
