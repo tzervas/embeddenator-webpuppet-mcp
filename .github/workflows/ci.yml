@@ -20,13 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v6
-      
       - name: Checkout webpuppet-rs dependency
         uses: actions/checkout@v6
         with:
           repository: tzervas/webpuppet-rs
           path: webpuppet-rs
+      
+      - uses: actions/checkout@v6
+        with:
+          path: webpuppet-rs-mcp
       
       - name: Install OpenSSL
         run: sudo apt-get update && sudo apt-get install -y libssl-dev pkg-config
@@ -40,15 +42,16 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           key: embeddenator-webpuppet-mcp
+          workspaces: webpuppet-rs-mcp
       
       - name: Check formatting
-        run: cargo fmt --check
+        run: cd webpuppet-rs-mcp && cargo fmt --check
       
       - name: Clippy lints
-        run: cargo clippy --all-targets --all-features -- -D warnings
+        run: cd webpuppet-rs-mcp && cargo clippy --all-targets --all-features -- -D warnings
       
       - name: Build
-        run: cargo build --all-features
+        run: cd webpuppet-rs-mcp && cargo build --all-features
       
       - name: Run tests
-        run: cargo test --all-features --verbose
+        run: cd webpuppet-rs-mcp && cargo test --all-features --verbose
